@@ -122,6 +122,7 @@ def selenium_request(usr):
         f.write(str(datetime.datetime.now()) + '\n')
 
     with SB(uc=True, xvfb=True) as sb:
+        print('SB started')
         try:
             sb.uc_open_with_reconnect(website_login, 4)
             # /// sb.save_screenshot(str(datetime.datetime.now()),folder='screenshots')
