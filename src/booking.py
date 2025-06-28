@@ -6,6 +6,11 @@ import time
 import random
 import json
 
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
 with open('users.json', 'r') as file:
         users = json.load(file)
 
