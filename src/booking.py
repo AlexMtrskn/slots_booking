@@ -20,7 +20,7 @@ website_basket = 'https://www.ssdcl.com.sg/User/Payment/ReviewItems'
 website_confirm_payment = 'https://www.ssdcl.com.sg/User/Payment/ConfirmPurchase'
 
 telegram_bot = 'driving_slots_bot'
-telegram_bot_token = '7176286692:AAFNjlG2TVlxoR4CGtIuUHvHq2mBysl-rTo'
+telegram_bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
 
 telegram_message_url = f"https://api.telegram.org/bot{telegram_bot_token}/sendMessage"
 
