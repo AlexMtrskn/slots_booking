@@ -133,7 +133,8 @@ def selenium_request(usr):
             with open("SSDC_log.txt", "a") as f:             
                 f.write('CAPTCHA problem' + '\n')
                 print('CAPTCHA problem')
-        
+
+        print('Login')
         try:
             # Login page
             sb.type('input[name="UserName"]', usr['login'])
@@ -162,6 +163,7 @@ def selenium_request(usr):
                 f.write('Navigation problem' + '\n')
                 print('Navigation problem')
 
+        print('Get availability')
         try:
             availability = []
             #message = ''
