@@ -220,5 +220,4 @@ def selenium_request(usr):
                 f.write('Navigation problem' + '\n')
                 print('Navigation problem')
 
-if __name__ == "__booking__":
-  selenium_request()
+selenium_request()
