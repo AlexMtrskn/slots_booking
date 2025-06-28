@@ -220,4 +220,4 @@ def selenium_request(usr):
                 f.write('Navigation problem' + '\n')
                 print('Navigation problem')
 
-selenium_request()
+selenium_request(usr)
