@@ -125,6 +125,8 @@ def selenium_request(usr):
         print('SB started')
         try:
             sb.uc_open_with_reconnect(website_login, 4)
+            sb.set_window_size(1920, 1080)
+            sb.sleep(2)
             # /// sb.save_screenshot(str(datetime.datetime.now()),folder='screenshots')
             sb.uc_gui_handle_cf()
             sb.uc_gui_handle_cf()
