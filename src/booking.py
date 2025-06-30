@@ -135,35 +135,35 @@ def selenium_request(usr):
                 print('CAPTCHA problem')
 
         print('Login')
-        print(usr['login'])
-        try:
-            # Login page
-            sb.type('input[name="UserName"]', usr['login'])
-            sb.type('input[name="Password"]', usr['password'])
-            sb.click("button.btn-general-form")
-
+       # try:
+         # Login page
+        sb.type('input[name="UserName"]', usr['login'])
+        sb.type('input[name="Password"]', usr['password'])
+        sb.click("button.btn-general-form")
+        
             # Class selection
-            sb.uc_open(website_booking)
-            sb.uc_gui_handle_cf()
-
-            sb.click('select[name="scid"]')
-            sb.click('option:contains("Class 2B")')
+        sb.uc_open(website_booking)
+        sb.uc_gui_handle_cf()
+        
+        sb.click('select[name="scid"]')
+        sb.click('option:contains("Class 2B")')
             # /// sb.uc_click('option:contains("Class 3")')
-
+        
             # New booking selection
-            sb.uc_gui_handle_cf()
-            sb.click('a[id="btnNewBooking"]')
+        sb.uc_gui_handle_cf()
+        sb.click('a[id="btnNewBooking"]')
 
             # Check for booking
-            sb.click('input[id="chkProceed"]')
-            sb.click('a[id="lnkProceed"]')
-            sb.sleep(1)
-        except:
+        sb.click('input[id="chkProceed"]')
+        sb.click('a[id="lnkProceed"]')
+        sb.sleep(1)
+        '''
+            except:
             send_telegram_message('Navigation problem', usr)
             with open("SSDC_log.txt", "a") as f:
                 f.write('Navigation problem' + '\n')
                 print('Navigation problem')
-
+        '''
         print('Get availability')
         try:
             availability = []
