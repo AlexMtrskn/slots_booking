@@ -120,8 +120,8 @@ def selenium_request(usr):
     with open("SSDC_log.txt", "a") as f:
         f.write("----------\n")
         f.write(str(datetime.datetime.now()) + '\n')
-
-    with SB(uc=True, xvfb=True) as sb:
+    chrome_binary_path = "/usr/bin/google-chrome" 
+    with SB(uc=True, xvfb=True, binary_location = chrome_binary_path) as sb:
         print('SB started')
         user_agent = sb.driver.execute_script("return navigator.userAgent;")
         print(f"User-Agent: {user_agent}")
