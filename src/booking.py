@@ -146,7 +146,7 @@ def selenium_request(usr):
         print('Login')
        # try:
          # Login page
-        sb.save_screenshot(str(datetime.datetime.now()),folder='screenshots')
+        #sb.save_screenshot(str(datetime.datetime.now()),folder='screenshots')
         sb.type('input[name="UserName"]', usr['login'])
         sb.type('input[name="Password"]', usr['password'])
         sb.click("button.btn-general-form")
