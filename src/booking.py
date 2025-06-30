@@ -121,7 +121,7 @@ def selenium_request(usr):
         f.write("----------\n")
         f.write(str(datetime.datetime.now()) + '\n')
 
-    with SB(uc=True, xvfb=True, test=True) as sb:
+    with SB(uc=True, xvfb=True) as sb:
         print('SB started')
         try:
             sb.driver.uc_open_with_reconnect(website_login, 4)
@@ -135,6 +135,7 @@ def selenium_request(usr):
                 print('CAPTCHA problem')
 
         print('Login')
+        print(usr['login'])
         try:
             # Login page
             sb.type('input[name="UserName"]', usr['login'])
@@ -220,7 +221,7 @@ def selenium_request(usr):
         except:
             send_telegram_message('Booking problem',usr)
             with open("SSDC_log.txt", "a") as f:
-                f.write('Navigation problem' + '\n')
-                print('Navigation problem')
+                f.write('Booking problem' + '\n')
+                print('Booking problem')
 
 selenium_request(usr)
