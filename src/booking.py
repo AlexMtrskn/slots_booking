@@ -126,7 +126,8 @@ def selenium_request(usr):
         user_agent = sb.driver.execute_script("return navigator.userAgent;")
         print(f"User-Agent: {user_agent}")
         try:
-            sb.driver.uc_open_with_reconnect(website_login, 4)
+            #sb.driver.uc_open_with_reconnect(website_login, 4)
+            sb.activate_cdp_mode(website_login)
             sb.sleep(2)
             # /// sb.save_screenshot(str(datetime.datetime.now()),folder='screenshots')
             sb.uc_gui_click_cf()
