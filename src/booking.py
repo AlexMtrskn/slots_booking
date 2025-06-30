@@ -142,7 +142,7 @@ def selenium_request(usr):
             with open("SSDC_log.txt", "a") as f:             
                 f.write('CAPTCHA problem' + '\n')
                 print('CAPTCHA problem')
-
+        sb.omg()
         print('Login')
        # try:
          # Login page
