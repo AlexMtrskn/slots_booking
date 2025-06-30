@@ -129,7 +129,7 @@ def selenium_request(usr):
             sb.sleep(2)
             sb.uc_gui_handle_cf()
         except:
-            send_telegram_message('CAPTCHA problem', )
+            send_telegram_message('CAPTCHA problem', usr)
             with open("SSDC_log.txt", "a") as f:             
                 f.write('CAPTCHA problem' + '\n')
                 print('CAPTCHA problem')
@@ -158,7 +158,7 @@ def selenium_request(usr):
             sb.click('a[id="lnkProceed"]')
             sb.sleep(1)
         except:
-            send_telegram_message('Navigation problem')
+            send_telegram_message('Navigation problem', usr)
             with open("SSDC_log.txt", "a") as f:
                 f.write('Navigation problem' + '\n')
                 print('Navigation problem')
@@ -216,9 +216,9 @@ def selenium_request(usr):
                         
                     message = "Slots booked:\n" + '- ' + str(slots_booked)
             
-            send_telegram_message(message)
+            send_telegram_message(message, usr)
         except:
-            send_telegram_message('Booking problem')
+            send_telegram_message('Booking problem',usr)
             with open("SSDC_log.txt", "a") as f:
                 f.write('Navigation problem' + '\n')
                 print('Navigation problem')
