@@ -125,8 +125,8 @@ def selenium_request(usr):
         print('SB started')
         try:
             sb.uc_open_with_reconnect(website_login, 4)
+            print(sb.get_page_title())
             # /// sb.save_screenshot(str(datetime.datetime.now()),folder='screenshots')
-            sb.sleep(2)
             sb.uc_gui_handle_cf()
         except:
             send_telegram_message('CAPTCHA problem', usr)
