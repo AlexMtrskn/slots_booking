@@ -121,7 +121,7 @@ def selenium_request(usr):
         f.write("----------\n")
         f.write(str(datetime.datetime.now()) + '\n')
     chrome_binary_path = "/opt/google/chrome/google-chrome" 
-    with SB(uc=True, xvfb=True, binary_location = chrome_binary_path) as sb:
+    with SB(uc=True, xvfb=True, binary_location = chrome_binary_path, headless=True) as sb:
         print('SB started')
         user_agent = sb.driver.execute_script("return navigator.userAgent;")
         print(f"User-Agent: {user_agent}")
