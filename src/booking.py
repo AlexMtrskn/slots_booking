@@ -124,12 +124,13 @@ def selenium_request(usr):
     with SB(uc=True, xvfb=True) as sb:
         print('SB started')
         try:
-            sb.uc_open_with_reconnect(website_login, 4)
-            print(sb.get_page_title())
+            sb.activate_cdp_mode(website_login)
+            #sb.uc_open_with_reconnect(website_login, 4)
             # /// sb.save_screenshot(str(datetime.datetime.now()),folder='screenshots')
-            sb.uc_gui_handle_cf()
-            #sb.uc_gui_handle_captcha()
+            #sb.uc_gui_handle_cf()
+            sb.uc_gui_handle_captcha()
             #sb.uc_gui_click_captcha()
+            print(sb.get_page_title())
         except:
             send_telegram_message('CAPTCHA problem', usr)
             with open("SSDC_log.txt", "a") as f:             
