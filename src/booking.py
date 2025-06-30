@@ -134,6 +134,8 @@ def selenium_request(usr):
             sb.save_screenshot(str(datetime.datetime.now()),folder='screenshots')
             #sb.uc_gui_click_cf()
             sb.sleep(2)
+            action = ActionChains(sb.driver)
+            action.context_click().perform()
             sb.uc_gui_click_x_y(250, 450)
             sb.save_screenshot(str(datetime.datetime.now()),folder='screenshots')
             #sb.uc_gui_handle_captcha()
