@@ -121,16 +121,18 @@ def selenium_request(usr):
         f.write("----------\n")
         f.write(str(datetime.datetime.now()) + '\n')
     chrome_binary_path = "/opt/google/chrome/google-chrome" 
-    with SB(uc=True, xvfb=True, binary_location = chrome_binary_path, headless=True) as sb:
+    with SB(uc=True, xvfb=True) as sb:
         print('SB started')
-        user_agent = sb.driver.execute_script("return navigator.userAgent;")
-        print(f"User-Agent: {user_agent}")
+
         try:
-            #sb.driver.uc_open_with_reconnect(website_login, 4)
-            sb.activate_cdp_mode(website_login)
+            sb.driver.uc_open_with_reconnect(website_login, 4)
+
             sb.sleep(2)
             # /// sb.save_screenshot(str(datetime.datetime.now()),folder='screenshots')
-            sb.uc_gui_click_cf()
+            sb.uc_gui_click_captcha()
+            #sb.uc_gui_click_cf()
+            sb.uc_gui_click_x_y(250, 450)
+            sb.save_screenshot(str(datetime.datetime.now()),folder='screenshots')
             #sb.uc_gui_handle_captcha()
             #sb.uc_gui_click_captcha()
             print(sb.get_page_title())
