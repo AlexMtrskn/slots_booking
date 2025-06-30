@@ -127,7 +127,7 @@ def selenium_request(usr):
             sb.driver.uc_open_with_reconnect(website_login, 6)
             sb.sleep(10)
             # /// sb.save_screenshot(str(datetime.datetime.now()),folder='screenshots')
-            sb.uc_gui_handle_cf()
+            sb.uc_gui_click_cf()
             #sb.uc_gui_handle_captcha()
             #sb.uc_gui_click_captcha()
             print(sb.get_page_title())
