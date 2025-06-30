@@ -129,6 +129,7 @@ def selenium_request(usr):
             #sb.uc_gui_handle_cf()
             #sb.uc_gui_handle_captcha()
             sb.uc_gui_click_captcha()
+            sb.uc_gui_click_captcha()
             print(sb.get_page_title())
         except:
             send_telegram_message('CAPTCHA problem', usr)
