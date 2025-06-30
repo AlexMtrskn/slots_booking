@@ -128,10 +128,12 @@ def selenium_request(usr):
             sb.driver.uc_open_with_reconnect(website_login, 4)
 
             sb.sleep(2)
-            sb.uc_gui_click_x_y(100, 100)
+            #sb.uc_gui_click_x_y(100, 100)
             # /// sb.save_screenshot(str(datetime.datetime.now()),folder='screenshots')
             sb.uc_gui_click_captcha()
+            sb.save_screenshot(str(datetime.datetime.now()),folder='screenshots')
             #sb.uc_gui_click_cf()
+            sb.sleep(2)
             sb.uc_gui_click_x_y(250, 450)
             sb.save_screenshot(str(datetime.datetime.now()),folder='screenshots')
             #sb.uc_gui_handle_captcha()
