@@ -125,7 +125,7 @@ def selenium_request(usr):
         print('SB started')
         try:
             sb.driver.uc_open_with_reconnect(website_login, 6)
-            sb.sleep(2)
+            sb.sleep(10)
             # /// sb.save_screenshot(str(datetime.datetime.now()),folder='screenshots')
             sb.uc_gui_handle_cf()
             #sb.uc_gui_handle_captcha()
