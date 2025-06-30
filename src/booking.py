@@ -127,7 +127,9 @@ def selenium_request(usr):
             sb.uc_open_with_reconnect(website_login, 4)
             print(sb.get_page_title())
             # /// sb.save_screenshot(str(datetime.datetime.now()),folder='screenshots')
-            sb.uc_gui_handle_cf()
+            #sb.uc_gui_handle_cf()
+            sb.uc_gui_handle_captcha()
+            sb.uc_gui_click_captcha()
         except:
             send_telegram_message('CAPTCHA problem', usr)
             with open("SSDC_log.txt", "a") as f:             
