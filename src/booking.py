@@ -123,6 +123,8 @@ def selenium_request(usr):
 
     with SB(uc=True, xvfb=True) as sb:
         print('SB started')
+        user_agent = sb.driver.execute_script("return navigator.userAgent;")
+        print(f"User-Agent: {user_agent}")
         try:
             sb.driver.uc_open_with_reconnect(website_login, 4)
             sb.sleep(2)
